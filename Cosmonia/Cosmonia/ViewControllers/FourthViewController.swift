@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FourthViewController: UIViewController {
+class FourthViewController: UIViewController, UITextFieldDelegate {
 
     var timer: Timer?
     var progress: Float = 0
@@ -25,7 +25,7 @@ class FourthViewController: UIViewController {
         timer?.fire()
         
         progressView.isHidden = false
-       // imageView.downloadedFrom(link: textField.text!)
+       
 
     }
 
@@ -43,8 +43,14 @@ class FourthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self
         progressView.isHidden = true
+        textField.text = ""
+        textField.resignFirstResponder()
     }
+    
+    
+
     
 }
 extension UIImageView {
@@ -69,9 +75,7 @@ extension UIImageView {
 }
 
     
-extention FourthViewController: UITextFieldDelegate {
-    
-}
+
 
 
 
